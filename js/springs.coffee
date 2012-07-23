@@ -14,7 +14,7 @@ window.restLength  = 200
 
 window.mass = 10
 window.dampening = 5.0
-window.gravity = 10          
+window.gravity = 0          
         
 window.nummber_of_dots = 20      
 

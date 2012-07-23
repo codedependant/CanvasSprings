@@ -21,7 +21,7 @@
 
   window.dampening = 5.0;
 
-  window.gravity = 10;
+  window.gravity = 0;
 
   window.nummber_of_dots = 20;
 
@@ -67,7 +67,6 @@
     canvas = $("#canvas")[0];
     canvas.width = $(document).width();
     canvas.height = $(document).height();
-    console.log(canvas);
     ctx = canvas.getContext("2d");
     ctx.fillStyle = "#FF0000";
     ctx.fillRect(0, 0, 10, 10);
@@ -87,10 +86,6 @@
   });
 
   $(canvas).mousedown(function(event) {
-    console.log(distance(anchor.position, {
-      x: event.clientX,
-      y: event.clientY
-    }));
     if (distance(anchor.position, {
       x: event.clientX,
       y: event.clientY
@@ -99,23 +94,6 @@
       return anchor.size = 80;
     }
   });
-
-  /*
-  $(canvas).click((event) ->
-      
-      for dot in dots
-  
-          deltaX = dot.position.x - event.clientX
-          deltaY = dot.position.y - event.clientY
-          
-          angle = Math.atan2(deltaX,deltaY)
-          
-          dot.velocity.x += Math.sin(angle) * 1000
-          dot.velocity.y += Math.cos(angle) * 1000
-      
-  )
-  */
-
 
   checkCollision = function(dotA, dotB) {
     return false;
